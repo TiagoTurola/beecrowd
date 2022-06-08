@@ -6,3 +6,16 @@
 // Output
 // Present a value that represents the average consumption of a car with 3 digits after the decimal point, followed by the message "km/l".
 
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+const calcMedia = (...lines) => {
+    const [distancia, combustivel] = lines;
+    const consumoMedia = distancia / combustivel;
+    
+    return consumoMedia;
+}
+
+const consumoMedia = calcMedia(...lines);
+
+console.log(consumoMedia.toFixed(3) + " km/l");

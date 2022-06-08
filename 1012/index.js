@@ -11,7 +11,7 @@
 // Output
 // The output file must contain 5 lines of data. Each line corresponds to one of the areas described above, always with a corresponding message (in Portuguese) and one space between the two points and the value. The value calculated must be presented with 3 digits after the decimal point.
 
-var input = require('fs').readFiev/stdleSync('/din', 'utf8');
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
 const [A, B, C] = input.split(" ").map(item => parseFloat(item));

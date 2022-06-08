@@ -6,15 +6,15 @@
 // Output
 // The output file must be a message like the following example where "Valor a pagar" means Value to Pay. Remember the space after ":" and after "R$" symbol. The value must be presented with 2 digits after the point.
 
-const item1 = Number(lines[0]);
-const item2 = Number(lines[1]);
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
 
-const qtditem1 = item1[1];
-const valoritem1 = item1[2];
+const [idItem1, qtditem1, valoritem1] = lines[0].split(" ").map(Number);
+const [idItem2, qtditem2, valoritem2] = lines[1].split(" ").map(Number);
+
 const valortotal1 =  qtditem1 * valoritem1;
-
-const qtditem2 = item2[1];
-const valoritem2 = item2[2];
 const valortotal2 =  qtditem2 * valoritem2;
 
 const total = valortotal1 + valortotal2;
+
+console.log("VALOR A PAGAR: R$ " + total.toFixed(2));
